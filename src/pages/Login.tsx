@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { auth } from '@/lib/firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Button } from '@/components/ui/button';
@@ -17,6 +17,11 @@ const Login = () => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Extract redirect URL from query parameters if present
+  const searchParams = new URLSearchParams(location.search);
+  const redirectUrl = searchParams.get('redirect') || '/';
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,7 +35,8 @@ const Login = () => {
         await signInWithEmailAndPassword(auth, email, password);
         toast.success('Logged in successfully!');
       }
-      navigate('/');
+      // Redirect to the intended destination after successful authentication
+      navigate(redirectUrl);
     } catch (error: any) {
       const errorMessage = error.message || 'Authentication failed';
       toast.error(errorMessage);

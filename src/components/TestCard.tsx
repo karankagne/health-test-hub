@@ -40,7 +40,7 @@ const TestCard = ({ test }: TestCardProps) => {
           </Link>
           
           <Link
-            to={`/book-test?testId=${test.id}`}
+            to={`/appointment/${test.id}`}
             className="btn-primary py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center gap-2"
           >
             <Calendar className="h-4 w-4" />
