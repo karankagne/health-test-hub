@@ -3,14 +3,17 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Search, Menu, X } from 'lucide-react';
+import { Search, Menu, X, User } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { auth } from '@/lib/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const Navbar = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +22,14 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsLoggedIn(!!user);
+    });
+    
+    return () => unsubscribe();
   }, []);
 
   const toggleMenu = () => {
@@ -35,7 +46,7 @@ const Navbar = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled ? 'bg-white shadow-md' : 'bg-amedico-teal'
+        isScrolled ? 'bg-white shadow-md' : 'bg-blue-600'
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,10 +55,10 @@ const Navbar = () => {
             <Link to="/" className="flex items-center">
               <img 
                 src="/amedico-logo.svg" 
-                alt="Amedico Logo" 
+                alt="Ambedkarlabs Logo" 
                 className="h-8 md:h-10"
                 onError={(e) => {
-                  e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 150 50"><rect width="150" height="50" fill="%23FFFFFF"/><text x="10" y="30" font-family="Arial" font-size="20" font-weight="bold" fill="%2300a99d">amedico.in</text></svg>';
+                  e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 150 50"><rect width="150" height="50" fill="%23FFFFFF"/><text x="10" y="30" font-family="Arial" font-size="20" font-weight="bold" fill="%230066cc">Ambedkarlabs</text></svg>';
                 }}
               />
             </Link>
@@ -62,8 +73,8 @@ const Navbar = () => {
                 className={cn(
                   'px-4 py-2 rounded-md font-medium text-base transition-colors duration-200',
                   location.pathname === item.path 
-                    ? (isScrolled ? 'text-amedico-teal' : 'text-white bg-amedico-dark-teal')
-                    : (isScrolled ? 'text-amedico-text hover:text-amedico-teal' : 'text-white hover:bg-amedico-dark-teal')
+                    ? (isScrolled ? 'text-blue-600' : 'text-white bg-blue-700')
+                    : (isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:bg-blue-700')
                 )}
               >
                 {item.label}
@@ -76,16 +87,17 @@ const Navbar = () => {
               <Link
                 to="/login"
                 className={cn(
-                  'hidden md:block px-4 py-2 rounded-md font-medium text-sm transition-colors duration-200',
-                  isScrolled ? 'text-amedico-teal hover:bg-amedico-teal/10' : 'text-white hover:bg-amedico-dark-teal'
+                  'hidden md:flex px-4 py-2 rounded-md font-medium text-sm transition-colors duration-200 items-center gap-2',
+                  isScrolled ? 'text-blue-600 hover:bg-blue-600/10' : 'text-white hover:bg-blue-700'
                 )}
               >
-                Log In
+                <User className="h-4 w-4" />
+                {isLoggedIn ? 'My Account' : 'Log In'}
               </Link>
               <button
                 className={cn(
                   'p-2 rounded-full md:hidden',
-                  isScrolled ? 'text-amedico-text' : 'text-white'
+                  isScrolled ? 'text-gray-700' : 'text-white'
                 )}
                 onClick={toggleMenu}
                 aria-label="Menu"
@@ -108,8 +120,8 @@ const Navbar = () => {
                 className={cn(
                   'block px-3 py-2 rounded-md text-base font-medium',
                   location.pathname === item.path
-                    ? 'bg-amedico-teal text-white'
-                    : 'text-amedico-text hover:bg-amedico-teal/10 hover:text-amedico-teal'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-700 hover:bg-blue-600/10 hover:text-blue-600'
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -118,10 +130,10 @@ const Navbar = () => {
             ))}
             <Link
               to="/login"
-              className="block px-3 py-2 rounded-md text-base font-medium text-amedico-text hover:bg-amedico-teal/10 hover:text-amedico-teal"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-600/10 hover:text-blue-600"
               onClick={() => setIsMenuOpen(false)}
             >
-              Log In
+              {isLoggedIn ? 'My Account' : 'Log In'}
             </Link>
           </div>
         </div>

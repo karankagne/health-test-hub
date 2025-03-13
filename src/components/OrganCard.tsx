@@ -15,19 +15,19 @@ const OrganCard = ({ id, name, icon, isActive = false }: OrganCardProps) => {
   const getIcon = () => {
     switch (icon) {
       case 'heart':
-        return <Heart className="w-10 h-10 text-amedico-teal" />;
+        return <Heart className="w-10 h-10 text-blue-600" />;
       case 'activity':
-        return <Activity className="w-10 h-10 text-amedico-teal" />;
+        return <Activity className="w-10 h-10 text-blue-600" />;
       case 'pyramid':
-        return <Pyramid className="w-10 h-10 text-amedico-teal" />;
+        return <Pyramid className="w-10 h-10 text-blue-600" />;
       case 'wind':
-        return <Wind className="w-10 h-10 text-amedico-teal" />;
+        return <Wind className="w-10 h-10 text-blue-600" />;
       case 'baby':
-        return <Baby className="w-10 h-10 text-amedico-teal" />;
+        return <Baby className="w-10 h-10 text-blue-600" />;
       case 'bean':
-        return <Bean className="w-10 h-10 text-amedico-teal" />;
+        return <Bean className="w-10 h-10 text-blue-600" />;
       default:
-        return <Activity className="w-10 h-10 text-amedico-teal" />;
+        return <Activity className="w-10 h-10 text-blue-600" />;
     }
   };
 
@@ -44,7 +44,7 @@ const OrganCard = ({ id, name, icon, isActive = false }: OrganCardProps) => {
       </div>
       <span className={cn(
         'text-lg font-medium transition-colors duration-300 mt-2',
-        isActive ? 'text-amedico-teal' : 'text-amedico-text group-hover:text-amedico-teal'
+        isActive ? 'text-blue-600' : 'text-gray-800 group-hover:text-blue-600'
       )}>
         {name}
       </span>

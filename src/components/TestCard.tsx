@@ -12,7 +12,7 @@ interface TestCardProps {
 const TestCard = ({ test }: TestCardProps) => {
   return (
     <div className="test-card animate-fade-in-up border border-gray-200 shadow-sm hover:shadow-md transition-shadow rounded-lg p-5">
-      <h3 className="text-lg md:text-xl font-medium text-amedico-text">{test.name}</h3>
+      <h3 className="text-lg md:text-xl font-medium text-gray-800">{test.name}</h3>
       
       <div className="mt-3 space-y-2">
         <div className="text-sm text-gray-600">
@@ -28,7 +28,7 @@ const TestCard = ({ test }: TestCardProps) => {
       
       <div className="mt-4 flex items-end justify-between">
         <div>
-          <span className="text-2xl font-bold text-amedico-teal">₹ {test.price.toLocaleString()}</span>
+          <span className="text-2xl font-bold text-blue-600">₹ {test.price.toLocaleString()}</span>
         </div>
         
         <div className="flex space-x-2">
@@ -41,7 +41,7 @@ const TestCard = ({ test }: TestCardProps) => {
           
           <Link
             to={`/book-test?testId=${test.id}`}
-            className="btn-primary py-2 px-4 bg-amedico-teal text-white rounded-md hover:bg-amedico-dark-teal transition-colors flex items-center gap-2"
+            className="btn-primary py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center gap-2"
           >
             <Calendar className="h-4 w-4" />
             <span>Book test</span>

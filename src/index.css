@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 173 100% 33%;
+    --primary: 217 91% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
@@ -31,7 +31,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 173 100% 33%;
+    --ring: 217 91% 45%;
 
     --radius: 0.5rem;
 
@@ -55,7 +55,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 173 100% 33%;
+    --primary: 217 91% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -72,7 +72,8 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 173 100% 33%;
+    --ring: 217 91% 45%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -90,7 +91,7 @@
   }
 
   body {
-    @apply bg-white text-amedico-text font-sans;
+    @apply bg-white text-gray-800 font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -100,23 +101,23 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-amedico-teal text-white px-6 py-2 rounded-md hover:bg-amedico-dark-teal transition-all duration-300 shadow-sm;
+    @apply bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-all duration-300 shadow-sm;
   }
   
   .btn-outline {
-    @apply border border-amedico-teal text-amedico-teal px-6 py-2 rounded-md hover:bg-amedico-teal hover:text-white transition-all duration-300;
+    @apply border border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-all duration-300;
   }
 
   .test-card {
-    @apply bg-white p-6 rounded-lg shadow-sm border border-amedico-border hover:shadow-md transition-all duration-300;
+    @apply bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300;
   }
 
   .organ-card {
-    @apply bg-white p-6 rounded-lg border border-amedico-border flex flex-col items-center justify-center gap-4 aspect-square hover:shadow-md transition-all duration-300 cursor-pointer;
+    @apply bg-white p-6 rounded-lg border border-gray-200 flex flex-col items-center justify-center gap-4 aspect-square hover:shadow-md transition-all duration-300 cursor-pointer;
   }
   
   .organ-card.active {
-    @apply border-amedico-teal bg-amedico-teal/5 shadow-md;
+    @apply border-blue-600 bg-blue-600/5 shadow-md;
   }
 }
 

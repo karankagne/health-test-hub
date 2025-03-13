@@ -5,25 +5,25 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'luc
 
 const Footer = () => {
   return (
-    <footer className="bg-amedico-text text-white pt-12 pb-8">
+    <footer className="bg-gray-800 text-white pt-12 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-semibold mb-4">About Amedico</h3>
+            <h3 className="text-xl font-semibold mb-4">About Ambedkarlabs</h3>
             <p className="text-gray-300 mb-4">
-              Amedico provides high-quality diagnostic services with accurate results, helping you make informed decisions about your health.
+              Ambedkarlabs provides high-quality diagnostic services with accurate results, helping you make informed decisions about your health.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-amedico-teal transition-colors">
+              <a href="#" className="text-white hover:text-blue-400 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-white hover:text-amedico-teal transition-colors">
+              <a href="#" className="text-white hover:text-blue-400 transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-white hover:text-amedico-teal transition-colors">
+              <a href="#" className="text-white hover:text-blue-400 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-white hover:text-amedico-teal transition-colors">
+              <a href="#" className="text-white hover:text-blue-400 transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -35,11 +35,6 @@ const Footer = () => {
               <li>
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">
                   Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/departments" className="text-gray-300 hover:text-white transition-colors">
-                  Departments
                 </Link>
               </li>
               <li>
@@ -104,7 +99,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="mr-2 flex-shrink-0" />
-                <span className="text-gray-300">info@amedico.in</span>
+                <span className="text-gray-300">info@ambedkarlabs.in</span>
               </li>
             </ul>
           </div>
@@ -112,7 +107,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-6 border-t border-gray-700">
           <p className="text-center text-gray-400">
-            &copy; {new Date().getFullYear()} Amedico. All rights reserved.
+            &copy; {new Date().getFullYear()} Ambedkarlabs. All rights reserved.
           </p>
         </div>
       </div>

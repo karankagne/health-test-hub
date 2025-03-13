@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import TestList from "./pages/TestList";
 import OrganTests from "./pages/OrganTests";
 import BookTest from "./pages/BookTest";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/tests/:category?" element={<TestList />} />
           <Route path="/organ/:organId" element={<OrganTests />} />
           <Route path="/book-test" element={<BookTest />} />
+          <Route path="/login" element={<Login />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
