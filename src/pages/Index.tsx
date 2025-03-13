@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Search, Heart, Lungs, Activity } from 'lucide-react';
+import { ArrowRight, Search, Heart, Activity, Scale } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -166,7 +165,7 @@ const Index = () => {
             
             <div className="p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow animate-fade-in-up" style={{ animationDelay: '300ms' }}>
               <div className="w-14 h-14 bg-amedico-teal/10 rounded-full flex items-center justify-center mb-4">
-                <Lungs className="h-7 w-7 text-amedico-teal" />
+                <Scale className="h-7 w-7 text-amedico-teal" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Comprehensive Testing</h3>
               <p className="text-gray-600">
