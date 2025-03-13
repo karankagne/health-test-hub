@@ -2,16 +2,16 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Test } from '@/lib/testData';
-import { Plus } from 'lucide-react';
+import { Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface TestCardProps {
   test: Test;
-  onAddToCart?: () => void;
 }
 
-const TestCard = ({ test, onAddToCart }: TestCardProps) => {
+const TestCard = ({ test }: TestCardProps) => {
   return (
-    <div className="test-card animate-fade-in-up">
+    <div className="test-card animate-fade-in-up border border-gray-200 shadow-sm hover:shadow-md transition-shadow rounded-lg p-5">
       <h3 className="text-lg md:text-xl font-medium text-amedico-text">{test.name}</h3>
       
       <div className="mt-3 space-y-2">
@@ -32,20 +32,20 @@ const TestCard = ({ test, onAddToCart }: TestCardProps) => {
         </div>
         
         <div className="flex space-x-2">
-          <button 
-            className="btn-outline"
-            onClick={() => {}}
+          <Link 
+            to={`/test/${test.id}`}
+            className="btn-outline py-2 px-4 border border-gray-300 rounded-md transition-colors hover:bg-gray-100"
           >
             View More
-          </button>
+          </Link>
           
-          <button
-            className="btn-primary flex items-center gap-2"
-            onClick={onAddToCart}
+          <Link
+            to={`/book-test?testId=${test.id}`}
+            className="btn-primary py-2 px-4 bg-amedico-teal text-white rounded-md hover:bg-amedico-dark-teal transition-colors flex items-center gap-2"
           >
-            <Plus className="h-4 w-4" />
-            <span>Add to cart</span>
-          </button>
+            <Calendar className="h-4 w-4" />
+            <span>Book test</span>
+          </Link>
         </div>
       </div>
     </div>

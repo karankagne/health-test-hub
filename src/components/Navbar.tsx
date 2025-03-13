@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { ShoppingCart, Search, Menu, X } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
@@ -27,7 +27,6 @@ const Navbar = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/departments', label: 'Departments' },
     { path: '/book-test', label: 'Book A Test' },
     { path: '/packages', label: 'Health Checkup Packages' },
   ];
@@ -82,21 +81,6 @@ const Navbar = () => {
                 )}
               >
                 Log In
-              </Link>
-              <Link
-                to="/cart"
-                className="p-2 rounded-full transition-colors duration-200 relative"
-                aria-label="Cart"
-              >
-                <ShoppingCart 
-                  className={cn(
-                    'h-5 w-5 transition-colors duration-200',
-                    isScrolled ? 'text-amedico-text' : 'text-white'
-                  )} 
-                />
-                <span className="absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 rounded-full bg-red-500 text-white text-xs">
-                  0
-                </span>
               </Link>
               <button
                 className={cn(

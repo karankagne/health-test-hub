@@ -86,37 +86,37 @@ export const organTests: OrganTest[] = [
   {
     id: 'heart',
     name: 'Heart',
-    icon: '/lovable-uploads/cc0a01a9-0f54-4cda-a5be-a5094defb8bb.png',
+    icon: 'heart', // Using Lucide icon name instead of image path
     tests: ['ecg', 'stresstest', 'echo', 'cardiacenzyme', 'tropinin', 'bnp', 'ddimer']
   },
   {
     id: 'thyroid',
     name: 'Thyroid',
-    icon: '/lovable-uploads/4c77be57-1120-4d8a-8fb6-76cfefe34f6b.png',
+    icon: 'activity', // Using Lucide icon name instead of image path
     tests: ['tsh', 'freet3', 'freet4']
   },
   {
     id: 'liver',
     name: 'Liver',
-    icon: '/public/liver.svg',
+    icon: 'pyramid', // Using Lucide icon name
     tests: ['lft', 'albumin', 'totalprotein', 'bilirubin']
   },
   {
     id: 'lungs',
     name: 'Lungs',
-    icon: '/public/lungs.svg',
+    icon: 'wind', // Using Lucide icon name
     tests: ['echo', 'pulmonaryfunction']
   },
   {
     id: 'infertility',
     name: 'Infertility',
-    icon: '/public/infertility.svg',
+    icon: 'baby', // Using Lucide icon name
     tests: ['testosterone', 'estrogen', 'folate', 'vitb12']
   },
   {
     id: 'kidney',
     name: 'Kidney',
-    icon: '/public/kidney.svg',
+    icon: 'bean', // Using Lucide icon name
     tests: ['kidney', 'bun', 'urinalysis', 'microalbumin', 'urineprotein']
   }
 ];
