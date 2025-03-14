@@ -3,13 +3,29 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Test } from '@/lib/testData';
 import { Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface TestCardProps {
   test: Test;
 }
 
 const TestCard = ({ test }: TestCardProps) => {
+  const navigate = useNavigate();
+  const { currentUser } = useAuth();
+
+  const handleBookTest = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // If user is logged in, go directly to appointment form
+    if (currentUser) {
+      navigate(`/appointment/${test.id}`);
+    } else {
+      // If not logged in, redirect to login page with redirect URL
+      navigate(`/login?redirect=/appointment/${test.id}`);
+    }
+  };
+
   return (
     <div className="test-card animate-fade-in-up border border-gray-200 shadow-sm hover:shadow-md transition-shadow rounded-lg p-5">
       <h3 className="text-lg md:text-xl font-medium text-gray-800">{test.name}</h3>
@@ -39,13 +55,13 @@ const TestCard = ({ test }: TestCardProps) => {
             View More
           </Link>
           
-          <Link
-            to={`/appointment/${test.id}`}
+          <button
+            onClick={handleBookTest}
             className="btn-primary py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center gap-2"
           >
             <Calendar className="h-4 w-4" />
             <span>Book test</span>
-          </Link>
+          </button>
         </div>
       </div>
     </div>

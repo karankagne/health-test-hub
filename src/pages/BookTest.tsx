@@ -25,6 +25,18 @@ const BookTest = () => {
   const urineTests = tests.filter(test => test.category === 'urine');
   const ecgTests = tests.filter(test => test.category === 'ecg');
 
+  const handleTestClick = (testId: string) => {
+    setSelectedTest(testId);
+    
+    // Immediate redirect to appointment form or login page
+    if (currentUser) {
+      navigate(`/appointment/${testId}`);
+    } else {
+      // Redirect to login page with redirect URL
+      navigate(`/login?redirect=/appointment/${testId}`);
+    }
+  };
+
   const handleBookAppointment = () => {
     if (!selectedTest) {
       toast({
@@ -85,7 +97,7 @@ const BookTest = () => {
                           ? "border-blue-600 bg-blue-50" 
                           : "border-gray-200 hover:border-blue-300"
                       )}
-                      onClick={() => setSelectedTest(test.id)}
+                      onClick={() => handleTestClick(test.id)}
                     >
                       <div className="flex justify-between items-start">
                         <h3 className="font-medium text-gray-800">{test.name}</h3>
@@ -112,7 +124,7 @@ const BookTest = () => {
                           ? "border-blue-600 bg-blue-50" 
                           : "border-gray-200 hover:border-blue-300"
                       )}
-                      onClick={() => setSelectedTest(test.id)}
+                      onClick={() => handleTestClick(test.id)}
                     >
                       <div className="flex justify-between items-start">
                         <h3 className="font-medium text-gray-800">{test.name}</h3>
@@ -139,7 +151,7 @@ const BookTest = () => {
                           ? "border-blue-600 bg-blue-50" 
                           : "border-gray-200 hover:border-blue-300"
                       )}
-                      onClick={() => setSelectedTest(test.id)}
+                      onClick={() => handleTestClick(test.id)}
                     >
                       <div className="flex justify-between items-start">
                         <h3 className="font-medium text-gray-800">{test.name}</h3>
