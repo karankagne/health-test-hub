@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Search, Heart, Activity, Scale } from 'lucide-react';
@@ -7,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import OrganCard from '@/components/OrganCard';
 import TestCard from '@/components/TestCard';
+import LabCarousel from '@/components/LabCarousel';
 import { organTests, popularTests } from '@/lib/testData';
 
 const Index = () => {
@@ -63,6 +63,9 @@ const Index = () => {
         </div>
         <div className="h-16 bg-white rounded-t-[50px] md:rounded-t-[100px]"></div>
       </section>
+      
+      {/* Lab Carousel Section */}
+      <LabCarousel />
       
       {/* Vital Organs Tests Section */}
       <section className="py-16 bg-white">
