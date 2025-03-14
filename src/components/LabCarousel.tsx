@@ -70,6 +70,10 @@ const LabCarousel = () => {
                         src={item.imageUrl}
                         alt={item.title}
                         className="w-full h-72 object-cover"
+                        onError={(e) => {
+                          console.error(`Failed to load image: ${item.imageUrl}`);
+                          e.currentTarget.src = "/placeholder.svg";
+                        }}
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                         <h3 className="text-white text-xl font-semibold mb-2">{item.title}</h3>
