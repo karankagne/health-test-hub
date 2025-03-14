@@ -14,26 +14,26 @@ const labImages = [
   {
     id: 1,
     imageUrl: "/lab-equipment.jpg",
-    title: "State-of-the-Art Equipment",
-    description: "Our labs are equipped with the latest diagnostic technology for accurate results."
+    title: "Precision Lab Equipment",
+    description: "Advanced diagnostic tools and equipment for accurate testing and analysis."
   },
   {
     id: 2,
     imageUrl: "/lab-technician.jpg",
     title: "Expert Technicians",
-    description: "Our team of certified lab technicians ensures precise sample processing."
+    description: "Our skilled technicians handle samples with utmost precision and care."
   },
   {
     id: 3,
     imageUrl: "/lab-interior.jpg",
-    title: "Modern Facilities",
-    description: "Clean, comfortable environments designed for patient convenience."
+    title: "Modern Laboratory Facilities",
+    description: "State-of-the-art laboratory with controlled environment for accurate results."
   },
   {
     id: 4,
     imageUrl: "/sample-collection.jpg",
-    title: "Careful Sample Collection",
-    description: "Gentle, professional sample collection with minimal discomfort."
+    title: "Careful Sample Analysis",
+    description: "Meticulous examination of samples using advanced microscopy techniques."
   }
 ];
 
@@ -46,10 +46,10 @@ const LabCarousel = () => {
             OUR FACILITIES
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-amedico-text mb-4">
-            Explore Our Modern Labs
+            Advanced Diagnostic Laboratories
           </h2>
           <p className="text-gray-600">
-            Take a virtual tour of our state-of-the-art laboratory facilities and equipment.
+            Take a glimpse into our cutting-edge laboratory facilities where precision meets care.
           </p>
         </div>
 
@@ -58,34 +58,32 @@ const LabCarousel = () => {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-5xl mx-auto"
+          className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent>
             {labImages.map((item) => (
-              <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/2">
-                <div className="p-1">
-                  <Card className="overflow-hidden border-none shadow-md">
-                    <CardContent className="p-0">
-                      <div className="relative">
-                        <img
-                          src={item.imageUrl}
-                          alt={item.title}
-                          className="w-full h-64 object-cover"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                          <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
-                          <p className="text-white/90 text-sm">{item.description}</p>
-                        </div>
+              <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/2 p-1">
+                <Card className="overflow-hidden border-none shadow-lg rounded-xl">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <img
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="w-full h-72 object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <h3 className="text-white text-xl font-semibold mb-2">{item.title}</h3>
+                        <p className="text-white/90 text-sm">{item.description}</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center mt-6 gap-2">
-            <CarouselPrevious className="relative static rounded-full" />
-            <CarouselNext className="relative static rounded-full" />
+          <div className="flex justify-center mt-8 gap-4">
+            <CarouselPrevious className="relative static rounded-full bg-amedico-teal text-white hover:bg-amedico-teal/90 border-none" />
+            <CarouselNext className="relative static rounded-full bg-amedico-teal text-white hover:bg-amedico-teal/90 border-none" />
           </div>
         </Carousel>
       </div>
