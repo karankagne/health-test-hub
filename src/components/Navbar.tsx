@@ -56,7 +56,7 @@ const Navbar = () => {
               <img 
                 src="/amedico-logo.svg" 
                 alt="Ambedkarlabs Logo" 
-                className="h-8 md:h-10"
+                className="h-12 md:h-14" // Increased from h-8 md:h-10 to h-12 md:h-14
                 onError={(e) => {
                   e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 150 50"><rect width="150" height="50" fill="%23FFFFFF"/><text x="10" y="30" font-family="Arial" font-size="20" font-weight="bold" fill="%230066cc">Ambedkarlabs</text></svg>';
                 }}
