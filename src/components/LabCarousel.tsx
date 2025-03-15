@@ -13,25 +13,25 @@ import { Card, CardContent } from "@/components/ui/card";
 const labImages = [
   {
     id: 1,
-    imageUrl: "/placeholder.svg",
+    imageUrl: "/lab-equipment.jpg",
     title: "Precision Lab Equipment",
     description: "Advanced diagnostic tools and equipment for accurate testing and analysis."
   },
   {
     id: 2,
-    imageUrl: "/placeholder.svg",
+    imageUrl: "/lab-technician.jpg",
     title: "Expert Technicians",
     description: "Our skilled technicians handle samples with utmost precision and care."
   },
   {
     id: 3,
-    imageUrl: "/placeholder.svg",
+    imageUrl: "/lab-interior.jpg",
     title: "Modern Laboratory Facilities",
     description: "State-of-the-art laboratory with controlled environment for accurate results."
   },
   {
     id: 4,
-    imageUrl: "/placeholder.svg",
+    imageUrl: "/sample-collection.jpg",
     title: "Careful Sample Analysis",
     description: "Meticulous examination of samples using advanced microscopy techniques."
   }
