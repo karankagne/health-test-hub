@@ -13,27 +13,27 @@ import { Card, CardContent } from "@/components/ui/card";
 const labImages = [
   {
     id: 1,
-    imageUrl: "/lab-equipment.jpg",
-    title: "Precision Lab Equipment",
-    description: "Advanced diagnostic tools and equipment for accurate testing and analysis."
+    imageUrl: "/lovable-uploads/c842e8fd-92c8-4d3e-8429-9ae26be0e83e.png",
+    title: "Advanced Laboratory Setup",
+    description: "State-of-the-art laboratory equipment for precision diagnostics and research."
   },
   {
     id: 2,
-    imageUrl: "/lab-technician.jpg",
-    title: "Expert Technicians",
-    description: "Our skilled technicians handle samples with utmost precision and care."
+    imageUrl: "/lovable-uploads/938a157c-eeb8-4494-aafe-d10c99376e4d.png",
+    title: "Controlled Environment Testing",
+    description: "Our technicians follow strict protocols in controlled environments for accurate results."
   },
   {
     id: 3,
-    imageUrl: "/lab-interior.jpg",
-    title: "Modern Laboratory Facilities",
-    description: "State-of-the-art laboratory with controlled environment for accurate results."
+    imageUrl: "/lovable-uploads/fffb1f1a-3adf-405a-a96f-522d9e5e14d9.png",
+    title: "Advanced Diagnostic Analysis",
+    description: "Expert professionals analyzing test results with cutting-edge monitoring systems."
   },
   {
     id: 4,
-    imageUrl: "/sample-collection.jpg",
-    title: "Careful Sample Analysis",
-    description: "Meticulous examination of samples using advanced microscopy techniques."
+    imageUrl: "/lovable-uploads/c86758ec-3ce9-4747-943c-0f90484cf566.png",
+    title: "Precision Testing Equipment",
+    description: "Modern microscopy and analytical instruments for detailed sample examination."
   }
 ];
 
